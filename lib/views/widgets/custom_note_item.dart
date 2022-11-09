@@ -1,10 +1,27 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key});
 
+
+
+
+
+
+  final data = const[
+    Colors.blueGrey,
+    Colors.cyanAccent,
+    Colors.pinkAccent,
+    Colors.amberAccent
+  ];
   @override
   Widget build(BuildContext context) {
+
+    var random = Random();
+
+    int result =  random.nextInt(4);
 
     return Container(
       padding:const EdgeInsets.only(
@@ -13,7 +30,7 @@ class NoteItem extends StatelessWidget {
           left: 16.0
       ),
       decoration: BoxDecoration(
-          color: Colors.amberAccent,
+          color: data[result],
           borderRadius: BorderRadius.circular(16)
       ),
       child: Column(
